@@ -9,10 +9,14 @@ jobs:
   simulate:
     runs-on: ubuntu-latest
     steps:
-      - name: Projeto Supabase 1
+      - name: Projeto Supabase 1 (dynamic-handler)
         run: |
-              curl -X POST https://lfhgyyhzvhmdphgbvblc.supabase.co/functions/v1/dynamic-handler
+          curl -X POST \
+            -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxmaGd5eWh6dmhtZHBoZ2J2YmxjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk5MzEzOTYsImV4cCI6MjA3NTUwNzM5Nn0.ZAcoIbeOQFIo01qW_rcKIkJKvneqgeN6rpPSCFvTe1Y" \
+            https://lfhgyyhzvhmdphgbvblc.supabase.co/functions/v1/dynamic-handler
 
-      - name: Projeto Supabase 2
+      - name: Projeto Supabase 2 (smart-worker)
         run: |
-          curl -X POST https://oufiieqxyyqnqpcbuyms.supabase.co/functions/v1/smart-worker
+          curl -X POST \
+            -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im91ZmlpZXF4eXlxbnFwY2J1eW1zIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkzNDMwNDgsImV4cCI6MjA3NDkxOTA0OH0.-4QPA1R5y24daAt-WsZuWc8-2bJxCJGhdTR1nq4RnHc" \
+            https://oufiieqxyyqnqpcbuyms.supabase.co/functions/v1/smart-worker
