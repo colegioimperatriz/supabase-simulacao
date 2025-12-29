@@ -1,0 +1,18 @@
+name: Simulacao Supabase (3 dias)
+
+on:
+  schedule:
+    - cron: "0 0 */3 * *"
+  workflow_dispatch:
+
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Projeto Supabase 1
+        run: |
+          curl -X POST https://oufiieqxyyqnqpcbuyms.supabase.co/functions/v1/simular-uso
+
+      - name: Projeto Supabase 2
+        run: |
+          curl -X POST https://lfhgyyhzvhmdphgbvblc.supabase.co/functions/v1/simular-uso
