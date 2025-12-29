@@ -60,12 +60,20 @@ async function iniciar() {
     await simularProjeto(projeto);
   }
 
-  // repete a cada 5 minutos
-  setInterval(async () => {
-    for (const projeto of PROJETOS) {
-      await simularProjeto(projeto);
-    }
-  }, 5 * 60 * 1000);
-}
+const INTERVALO_3_DIAS = 3 * 24 * 60 * 60 * 1000;
+
+// executa imediatamente uma vez
+(async () => {
+  for (const projeto of PROJETOS) {
+    await simularProjeto(projeto);
+  }
+})();
+
+// executa novamente a cada 3 dias
+setInterval(async () => {
+  for (const projeto of PROJETOS) {
+    await simularProjeto(projeto);
+  }
+}, INTERVALO_3_DIAS);
 
 iniciar();
